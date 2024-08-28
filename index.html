@@ -3,23 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Web App</title>
-    <script>
-        // 初始化 Telegram Web App 对象
-        const tg = window.Telegram.WebApp;
-
-        function onDeposit() {
-            tg.sendData("充值按钮被点击");
+    <title>虚拟货币钱包</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
-
-        function onWithdraw() {
-            tg.sendData("提现按钮被点击");
+        body {
+            background-color: #f3f4f6;
+            color: #333;
         }
-    </script>
+        .navbar {
+            background-color: #1f2937;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .title {
+            font-size: 18px;
+        }
+        .balance {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .balance .amount {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .balance .currency {
+            font-size: 14px;
+            color: #555;
+        }
+        .assets {
+            margin: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .asset-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .asset-item:last-child {
+            border-bottom: none;
+        }
+        .asset-item .name {
+            font-weight: bold;
+        }
+        .asset-item .balance {
+            font-size: 14px;
+            color: #555;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 15px;
+        }
+        .button {
+            background-color: #4f46e5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            width: 30%;
+        }
+        .button:hover {
+            background-color: #3730a3;
+        }
+        .footer {
+            background-color: #1f2937;
+            padding: 10px;
+            color: #fff;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>欢迎使用我们的服务</h1>
-    <button onclick="onDeposit()">充值</button>
-    <button onclick="onWithdraw()">提现</button>
+    <!-- 顶部导航栏 -->
+    <div class="navbar">
+        <div class="title">Wallet</div>
+        <div>设置 | 帮助</div>
+    </div>
+
+    <!-- 余额显示区域 -->
+    <div class="balance">
+        <div class="amount">$0.00</div>
+        <div class="currency">总余额</div>
+    </div>
+
+    <!-- 资产列表 -->
+    <div class="assets">
+        <div class="asset-item">
+            <div class="name">比特币 (BTC)</div>
+            <div class="balance">$0.00</div>
+        </div>
+        <div class="asset-item">
+            <div class="name">以太坊 (ETH)</div>
+            <div class="balance">$0.00</div>
+        </div>
+        <div class="asset-item">
+            <div class="name">泰达币 (USDT)</div>
+            <div class="balance">$0.00</div>
+        </div>
+    </div>
+
+    <!-- 操作按钮 -->
+    <div class="buttons">
+        <div class="button">发送</div>
+        <div class="button">接收</div>
+        <div class="button">交换</div>
+    </div>
+
+    <!-- 底部菜单栏 -->
+    <div class="footer">
+        交易记录 | 设置 | 关于
+    </div>
 </body>
 </html>
