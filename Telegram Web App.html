@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram Web App</title>
+    <script>
+        // 初始化 Telegram Web App 对象
+        const tg = window.Telegram.WebApp;
+
+        function onDeposit() {
+            tg.sendData("充值按钮被点击");
+        }
+
+        function onWithdraw() {
+            tg.sendData("提现按钮被点击");
+        }
+    </script>
+</head>
+<body>
+    <h1>欢迎使用我们的服务</h1>
+    <button onclick="onDeposit()">充值</button>
+    <button onclick="onWithdraw()">提现</button>
+</body>
+</html>
