@@ -67,34 +67,18 @@
             height: 32px;
             margin-bottom: 5px;
         }
-        .button-section {
+        .section {
             padding: 15px;
             margin: 10px 15px;
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
         }
-        .button-section img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-        .button-section span {
+        .section-title {
             font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
             color: #333;
-        }
-        .assets {
-            display: flex;
-            flex-direction: column;
-            padding: 15px;
-            margin: 10px 15px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         .asset-item {
             display: flex;
@@ -111,16 +95,6 @@
             height: 24px;
             margin-right: 10px;
         }
-        .transaction-history {
-            flex: 1;
-            overflow-y: auto;
-        }
-        .transaction-history h4 {
-            padding: 15px;
-            background: #f8f9fa;
-            margin: 0;
-            font-size: 16px;
-        }
         .transaction-history ul {
             list-style: none;
             padding: 0;
@@ -136,11 +110,6 @@
             font-size: 14px;
         }
         .notification {
-            padding: 15px;
-            margin: 10px 15px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
         }
@@ -186,10 +155,11 @@
     </button>
 </div>
 
-<div class="assets">
+<div class="section">
+    <div class="section-title">资产</div>
     <div class="asset-item">
         <div style="display: flex; align-items: center;">
-            <img src="https://img.icons8.com/ios-filled/50/4a90e2/china-currency.png" alt="人民币">
+            <span>¥</span>
             <span>人民币</span>
         </div>
         <span>¥0.00</span>
@@ -210,14 +180,26 @@
     </div>
 </div>
 
-<div class="button-section">
-    <img src="https://img.icons8.com/ios-filled/50/4a90e2/time-machine.png" alt="交易历史">
-    <span>交易历史</span>
+<div class="section">
+    <div class="section-title">交易历史</div>
+    <ul class="transaction-history">
+        <li>
+            <span>2024-08-30</span>
+            <span>发送 ¥100</span>
+        </li>
+        <li>
+            <span>2024-08-29</span>
+            <span>接收 ¥50</span>
+        </li>
+    </ul>
 </div>
 
-<div class="notification">
-    <img src="https://img.icons8.com/ios-filled/50/4a90e2/bell.png" alt="通知">
-    <p>暂无新消息</p>
+<div class="section">
+    <div class="section-title">消息通知</div>
+    <div class="notification">
+        <img src="https://img.icons8.com/ios-filled/50/4a90e2/bell.png" alt="通知">
+        <p>暂无新消息</p>
+    </div>
 </div>
 
 <script>
@@ -228,4 +210,5 @@
 
 </body>
 </html>
+
 
