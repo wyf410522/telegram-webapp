@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telepay 钱包</title>
+    <title>Telepay </title>
     <style>
         body {
             margin: 0;
@@ -71,20 +71,25 @@
             height: 32px;
             margin-bottom: 5px;
         }
-        .section {
+        .button-section {
             padding: 15px;
+            margin: 10px 15px;
             background: #fff;
-            margin-top: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
         }
-        .section h3 {
-            margin: 0 0 10px;
+        .button-section img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+        .button-section span {
             font-size: 16px;
-        }
-        .section p {
-            margin: 5px 0;
-            font-size: 14px;
-            color: #666;
+            color: #333;
         }
         .transaction-history {
             flex: 1;
@@ -143,34 +148,15 @@
     </button>
 </div>
 
-<div class="section">
-    <h3>保护您的交易</h3>
-    <p>使用密码保护您的交易</p>
+<div class="button-section">
+    <img src="https://img.icons8.com/ios-filled/50/000000/us-dollar.png" alt="资产">
+    <span>资产</span>
+    <span>¥0.00</span>
 </div>
 
-<div class="section">
-    <h3>资产</h3>
-    <p>美元: ¥0.00</p>
-    <p>其他资产: ¥0.00</p>
-</div>
-
-<div class="section">
-    <h3>探索</h3>
-    <p>赢取100,000美元奖金</p>
-</div>
-
-<div class="transaction-history">
-    <h4>交易历史</h4>
-    <ul>
-        <li>
-            <span>2024-08-30</span>
-            <span>发送 ¥100</span>
-        </li>
-        <li>
-            <span>2024-08-29</span>
-            <span>接收 ¥50</span>
-        </li>
-    </ul>
+<div class="button-section">
+    <img src="https://img.icons8.com/ios-filled/50/000000/history.png" alt="交易历史">
+    <span>交易历史</span>
 </div>
 
 <script>
