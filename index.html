@@ -11,6 +11,7 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
             color: #333;
+            overflow: hidden; /* 防止 Telegram WebApp 滚动问题 */
         }
         header {
             background-color: #1f1f2e;
@@ -40,18 +41,21 @@
             display: flex;
             padding: 20px;
             gap: 20px;
+            height: calc(100vh - 60px); /* 全屏适配 */
         }
         .sidebar {
             width: 20%;
             background: #ffffff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
         }
         .content {
             flex: 1;
             background: #ffffff;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
         }
         .account-info {
             margin-bottom: 20px;
@@ -119,7 +123,7 @@
             <p>Total Balance: <strong>1.5000 BTC</strong></p>
         </div>
         <div class="actions">
-            <button>Send</button>
+            <button onclick="sendTransaction()">Send</button>
             <button>Receive</button>
             <button>Buy Crypto</button>
         </div>
@@ -153,6 +157,20 @@
     </main>
 </div>
 
+<script>
+    // Telegram Web App Initialization
+    const tg = window.Telegram.WebApp;
+    tg.expand(); // Expand the WebApp to full screen
+    
+    // Log some information for debugging purposes
+    console.log("Telegram WebApp started");
+    console.log("User Info:", tg.initDataUnsafe.user);
+
+    // Example function triggered by a button
+    function sendTransaction() {
+        alert("Send transaction functionality triggered!");
+    }
+</script>
+
 </body>
 </html>
-
